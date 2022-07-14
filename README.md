@@ -3,10 +3,10 @@
 Python version == 3.7.5
 
 ```
-git clone https://github.com/ZachKLYeh/Annotation_Viewer.git
+git clone https://github.com/ZachKLYeh/Annotation_Selector.git
 ```
 ```
-cd Annotation_Viewer
+cd Annotation_Selector
 ```
 ```
 python main.py
