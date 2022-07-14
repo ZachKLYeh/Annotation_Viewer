@@ -27,11 +27,13 @@ Xml format and txt(yolo) format are supported.
 
 * Press D for next image
 
-* Press C to select/unselect an image
-
 * Press F to crop an image
 
 * Press V to uncrop an image
+
+* Press C to select/unselect an image
+
+* Press E to display/hide object classes
 
 ### Move selected
 
