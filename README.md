@@ -23,15 +23,15 @@ Xml format and txt(yolo) format are supported.
 
 ### Key Pressed Event
 
-Press A for previous image
+* Press A for previous image
 
-Press D for next image
+* Press D for next image
 
-Press C to select/unselect an image
+* Press C to select/unselect an image
 
-Press F to crop an image
+* Press F to crop an image
 
-Press V to uncrop an image
+* Press V to uncrop an image
 
 ### Move selected
 
