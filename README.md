@@ -20,6 +20,29 @@ The application will read input folder and get image/annotation pairs. According
 
 Xml format and txt(yolo) format are supported.
 
+The input folder structure shoud be like this:(xml format visualization)
+
+|-- input foler
+|   |-- img1.jpg
+|   |-- img1.xml
+|   ˋ-- ...
+
+Or like this:(txt format visualization)
+
+|-- input foler
+|   |-- img1.jpg
+|   |-- img1.txt
+|   ˋ-- ...
+
+|-- input foler
+|   |--labels
+|      |-- img1.txt
+|      |-- img2.txt
+|      ˋ-- ...
+|   |-- img1.jpg
+|   |-- img2.jpg
+|   ˋ-- ...
+
 
 ### Key Pressed Event
 
@@ -40,5 +63,7 @@ Xml format and txt(yolo) format are supported.
 When you pressed the "move selected" button
 
 The application will move all the selected image/annotation pair to output folder.
+
+Note: We are only moving xml format annotation
 
 Then you can edit them via LabelImg
