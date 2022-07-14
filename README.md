@@ -12,6 +12,18 @@ cd Annotation_Selector
 python main.py
 ```
 
+## When to use?
+
+One way of annotation is to train the model on small annotated dataset
+
+Then utilize the model to predict some unlabeled images
+
+Then pick the mispredicted images for annotation
+
+The application is to fasten this behavior
+
+By helping annotator to view the prediction of the model and select wrong prediction for futher annotation
+
 ## How to use?
 
 ### Select input and output folder:
