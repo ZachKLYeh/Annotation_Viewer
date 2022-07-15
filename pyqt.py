@@ -25,8 +25,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.outputdirbutton = QtWidgets.QPushButton('output dir')
         self.nextimgbutton = QtWidgets.QPushButton('==> (D)')
         self.previmgbutton = QtWidgets.QPushButton('<== (A)')
-        self.zoomplusbutton = QtWidgets.QPushButton('zoom+ (F)')
-        self.zoomminusbutton = QtWidgets.QPushButton('zoom- (V)')
+        self.zoomplusbutton = QtWidgets.QPushButton('zoom+ (ctrl+wheel)')
+        self.zoomminusbutton = QtWidgets.QPushButton('zoom- (ctrl+wheel)')
         self.selectimgbutton = QtWidgets.QPushButton('select image (C)')
         self.displaylabelbutton = QtWidgets.QPushButton('display label (E)')
         self.selectimgbutton.setCheckable(True)
@@ -90,7 +90,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.nextimgclicked()
         elif event.key() == QtCore.Qt.Key_F:
             self.zoomplusbuttonclicked()
-        elif event.key() == QtCore.Qt.Key_V:
+        elif event.key() == QtCore.Qt.Key_G:
             self.zoomminusbuttonclicked()
         elif event.key() == QtCore.Qt.Key_E:
             self.displaylabelbutton.toggle()
@@ -98,6 +98,14 @@ class MainWindow(QtWidgets.QMainWindow):
         elif event.key() == QtCore.Qt.Key_C:
             self.selectimgbutton.toggle()
             self.selectcurrentimage()
+
+    def wheelEvent(self, QWheelEvent):
+        modifiers = QtWidgets.QApplication.keyboardModifiers()
+        if modifiers == QtCore.Qt.ControlModifier:
+            if QWheelEvent.angleDelta().y() > 0:
+                self.zoomplusbuttonclicked()
+            elif QWheelEvent.angleDelta().y() < 0:
+                self.zoomminusbuttonclicked()
 
     def closeEvent(self, event):
         if os.path.exists(self.tempimgpath):

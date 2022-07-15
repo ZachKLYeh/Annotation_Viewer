@@ -136,6 +136,7 @@ def visualize_txt(image_path, txt_path):
             scores.append(float(staff[5]))
         except:
             pass
+            
         y = float(staff[1])
         x = float(staff[2])
         h = float(staff[3])
@@ -188,7 +189,6 @@ def visualize_txt_without_cls(image_path, txt_path):
 
     img = cv2.imdecode(np.fromfile(image_path, dtype=np.uint8), -1)
     cls_ids = []
-    scores = []
     xmin = []
     ymin = []
     xmax = []
@@ -199,10 +199,6 @@ def visualize_txt_without_cls(image_path, txt_path):
         staff = line.split()
         cls_ids.append(int(staff[0]))
 
-        try:
-            scores.append(float(staff[5]))
-        except:
-            pass
         y = float(staff[1])
         x = float(staff[2])
         h = float(staff[3])
@@ -214,11 +210,6 @@ def visualize_txt_without_cls(image_path, txt_path):
 
     for i in range(len(cls_ids)):
         cls_id = int(cls_ids[i])
-
-        try:
-            score = scores[i]
-        except:
-            pass
         
         x0 = int(xmin[i])
         y0 = int(ymin[i])
