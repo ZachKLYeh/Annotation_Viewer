@@ -179,7 +179,7 @@ class MainWindow(QtWidgets.QMainWindow):
             #reload image using imageviewer
             cv2.imwrite(self.tempimgpath, self.visualized_image)
             self.imageviewer.enablePan(True)
-            self.imageviewer.loadImage(self.tempimgpath)
+            self.imageviewer.loadImageKeep(self.tempimgpath)
 
             #cursor is use to record last image location.
             self.cursor = index
@@ -394,6 +394,18 @@ class ImageViewer:
             self.update()
         else:
             self.errormsg = "Failed to load image"
+
+    def loadImageKeep(self, imagePath):
+        ''' To load and display new image.'''
+        self.qimage = QImage(imagePath)
+        self.qpixmap = QPixmap(self.qlabel_image.size())
+        if not self.qimage.isNull():
+            # reset Zoom factor and Pan position
+            self.qimage_scaled = self.qimage.scaled(self.qlabel_image.width() * self.zoomX, self.qlabel_image.height() * self.zoomX, QtCore.Qt.KeepAspectRatio)
+            self.update()
+        else:
+            self.errormsg = "Failed to load image"
+
 
     def update(self):
         ''' This function actually draws the scaled image to the qlabel_image.
