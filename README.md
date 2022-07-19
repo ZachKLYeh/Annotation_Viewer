@@ -77,9 +77,7 @@ Or like this:(txt format visualization)
 
 * Press D for next image
 
-* Press F to crop an image
-
-* Press V to uncrop an image
+* Press ctrl + mouse scroll to zoom in/zoom out
 
 * Press C to select/unselect an image
 
