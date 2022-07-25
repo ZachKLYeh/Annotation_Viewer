@@ -26,6 +26,8 @@ By helping annotator to view the prediction of the model and select wrong predic
 
 ## How to use?
 
+![](mainwindow.jpg)
+
 ### Select input and output folder:
 
 The application will read input folder and get image/annotation pairs. According to file name.
