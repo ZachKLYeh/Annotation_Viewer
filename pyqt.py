@@ -88,10 +88,6 @@ class MainWindow(QtWidgets.QMainWindow):
             self.previmgclicked()
         elif event.key() == QtCore.Qt.Key_D:
             self.nextimgclicked()
-        elif event.key() == QtCore.Qt.Key_F:
-            self.zoomplusbuttonclicked()
-        elif event.key() == QtCore.Qt.Key_G:
-            self.zoomminusbuttonclicked()
         elif event.key() == QtCore.Qt.Key_E:
             self.displaylabelbutton.toggle()
             self.displaylabelclicked()
@@ -177,7 +173,7 @@ class MainWindow(QtWidgets.QMainWindow):
                     self.visualized_image = utils.visualize_xml_without_cls(self.img_path, self.xml_path)
 
             #reload image using imageviewer
-            cv2.imwrite(self.tempimgpath, self.visualized_image)
+            cv2.imencode('.jpg', self.visualized_image)[1].tofile(self.tempimgpath) 
             self.imageviewer.enablePan(True)
             self.imageviewer.loadImageKeep(self.tempimgpath)
 

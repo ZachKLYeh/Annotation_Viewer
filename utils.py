@@ -56,6 +56,8 @@ def save_txt(input_dir, selection_list):
 
 def visualize_xml(img_path, xml_path):
 
+    cls_id = 0
+
     img = cv2.imdecode(np.fromfile(img_path, dtype=np.uint8), -1)
 
     tree = ET.parse(xml_path)
@@ -73,7 +75,7 @@ def visualize_xml(img_path, xml_path):
                 cls_id = id
 
         color = (_COLORS[cls_id] * 255).astype(np.uint8).tolist()
-        text = '{}'.format(CLASSES[cls_id])
+        text = '{}'.format(name)
         txt_color = (0, 0, 0) if np.mean(_COLORS[cls_id]) > 0.5 else (255, 255, 255)
         font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -93,6 +95,8 @@ def visualize_xml(img_path, xml_path):
     return img
 
 def visualize_xml_without_cls(img_path, xml_path):
+
+    cls_id = 0
 
     img = cv2.imdecode(np.fromfile(img_path, dtype=np.uint8), -1)
 
