@@ -26,6 +26,8 @@ By helping annotator to view the prediction of the model and select wrong predic
 
 ## How to use?
 
+![](mainwindow.jpg)
+
 ### Select input and output folder:
 
 The application will read input folder and get image/annotation pairs. According to file name.
@@ -77,9 +79,7 @@ Or like this:(txt format visualization)
 
 * Press D for next image
 
-* Press F to crop an image
-
-* Press V to uncrop an image
+* Press ctrl + mouse scroll to zoom in/zoom out
 
 * Press C to select/unselect an image
 
